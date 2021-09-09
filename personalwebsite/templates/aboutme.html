@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Jasmeher's Webpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel = "stylesheet"
+  type = "text/css"
+  href = "static/styles/indexStyle.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="static/typewrite.js"></script>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">&#x2715;</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Jasmeher Kathuria</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="{{ url_for('aboutme') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About Me</a>
+    <a href="{{ url_for('projects') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projects</a>
+    <a href="https://drive.google.com/file/d/1a51XCZNse9S2wOUwfWC4WNcR0cPFKZZ4/view?usp=sharing" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resume</a>
+    <a href="{{ url_for('contact') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Jasmeher Kathuria</span>
+</header>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="aboutme">
+    <h1 class="w3-jumbo w3-text-red"><b>About me</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+
+  <!-- About Me -->
+  <div class="w3-row-padding"style="background-color: #89CFF0">
+    <div class="w3-half">
+      <img src={{ url_for('static', filename = "jasav.svg") }}
+      style="width:50%" alt="Jasmeher">
+    </div>
+
+    <div class="w3-half" style="background-color: #89CFF0">
+      <h1 class="typewrite" data-period="2000" data-type='[ "Hi, I&#39;m Jasmeher &#9995;", "Welcome to my page!"]'></h1>
+      <h4>A sports enthusiast who loves building software &#x1F468;&#x200D;&#x1F4BB; and working with data &#x1F4CA; <br> <br> I am a student at the University of British Columbia
+       majoring in Statistics with a concentration in Computer Science alongside a minor in Data Science. </h4>
+    </div>
+  </div>
+
+
+<!-- End page content -->
+
+</div>
+
+<script>
+// Animation init
+AOS.init();
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Jasmeher's Webpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel = "stylesheet"
+  type = "text/css"
+  href = "static/styles/indexStyle.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/loadingio/loading.css@v2.0.0/dist/loading.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="static/typewrite.js"></script>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">&#x2715;</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Jasmeher Kathuria</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="{{ url_for('aboutme') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About Me</a>
+    <a href="{{ url_for('projects') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projects</a>
+    <a href="https://drive.google.com/file/d/1a51XCZNse9S2wOUwfWC4WNcR0cPFKZZ4/view?usp=sharing" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resume</a>
+    <a href="{{ url_for('contact') }}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Jasmeher Kathuria</span>
+</header>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Contact Header -->
+  <div class="w3-container" style="margin-top:80px" id="aboutme">
+    <h1 class="w3-jumbo w3-text-red"><b>Contact</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+
+  <!-- Contact -->
+  <div class="w3-row-padding"style="background-color: #89CFF0">
+    <div class="w3-half">
+      <img src={{ url_for('static', filename = "contactsvg.svg") }}
+      style="width:50%" alt="Jasmeher">
+    </div>
+
+    <div class="w3-half" style="background-color: #89CFF0">
+      <h2>If you want to get to know me better, feel free to reach out</h2>
+      <div class="w3-half">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <a href="https://www.linkedin.com/in/jasmeher-kathuria/">
+<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_0Cm1Y2.json"  background="transparent"  speed="1"  style="width: 70%; height: 70%;" hover   ></lottie-player>
+</a>
+<a href="https://github.com/jasmeherk">
+<lottie-player src="https://assets10.lottiefiles.com/packages/lf20_SiFYir.json"  background="transparent"  speed="6"  style="width: 70%; height: 70%;" hover   ></lottie-player>
+</a>
+</div>
+<div class="w3-half">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <a href="mailto:jasmeherk@gmail.com">
+<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_umgeiguf.json"  background="transparent"  speed="2"  style="width: 70%; height: 70%;" hover   ></lottie-player>
+</a>
+<a href="https://twitter.com/jasmeherk">
+<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_itgioxa3.json"  background="transparent"  speed="4"  style="width: 70%; height: 70%;" hover   ></lottie-player>
+</a>
+</div>
+    </div>
+  </div>
+
+
+
+<!-- End page content -->
+
+</div>
+
+<script>
+// Animation init
+AOS.init();
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
